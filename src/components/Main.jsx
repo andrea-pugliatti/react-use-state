@@ -1,5 +1,6 @@
 import { useState } from "react";
 import languages from "../assets/languages";
+import Card from "./Card";
 
 export default function Main({ data }) {
 	const [active, setActive] = useState(1);
@@ -25,10 +26,10 @@ export default function Main({ data }) {
 						</li>
 					))}
 				</ul>
-				<div className="card p-4 m-5">
-					<h2>{languages.at(active - 1).title}</h2>
-					<p>{languages.at(active - 1).description}</p>
-				</div>
+				<Card
+					title={languages.at(active - 1).title}
+					description={languages.at(active - 1).description}
+				/>
 			</div>
 		</div>
 	);
