@@ -12,7 +12,6 @@ export default function Main({ data }) {
 		} else {
 			setActive(id);
 		}
-		console.log(id);
 	};
 
 	return (
