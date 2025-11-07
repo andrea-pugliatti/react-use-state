@@ -4,11 +4,15 @@ import Button from "./Button";
 import Card from "./Card";
 
 export default function Main({ data }) {
-	const [active, setActive] = useState(1);
+	const [active, setActive] = useState(0);
 
 	const handleClick = (id) => {
+		if (id === active) {
+			setActive(0);
+		} else {
+			setActive(id);
+		}
 		console.log(id);
-		setActive(id);
 	};
 
 	return (
@@ -25,10 +29,19 @@ export default function Main({ data }) {
 						/>
 					))}
 				</ul>
-				<Card
-					title={languages.at(active - 1).title}
-					description={languages.at(active - 1).description}
-				/>
+				{active > 0 ? (
+					<Card
+						title={languages.at(active - 1).title}
+						description={languages.at(active - 1).description}
+					/>
+				) : (
+					<Card
+						title={"Nessun linguaggio selezionato"}
+						description={
+							"Clicca su uno dei bottoni per scoprire di più sui linguaggi di programmazione."
+						}
+					/>
+				)}
 			</div>
 		</div>
 	);

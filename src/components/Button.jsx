@@ -1,5 +1,4 @@
 export default function Button({ id, title, active, handleClick }) {
-	console.log(handleClick);
 	return (
 		<li className="nav-item">
 			<button
