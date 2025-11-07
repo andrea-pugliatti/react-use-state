@@ -1,5 +1,6 @@
 import { useState } from "react";
 import languages from "../assets/languages";
+import Button from "./Button";
 import Card from "./Card";
 
 export default function Main({ data }) {
@@ -15,15 +16,13 @@ export default function Main({ data }) {
 			<div className="container">
 				<ul className="nav nav-pills m-5">
 					{data.map((language) => (
-						<li key={language.id} className="nav-item">
-							<button
-								onClick={() => handleClick(language.id)}
-								type="button"
-								className={`nav-link ${active === language.id ? "active" : ""} me-1`}
-							>
-								{language.title}
-							</button>
-						</li>
+						<Button
+							key={language.id}
+							id={language.id}
+							title={language.title}
+							handleClick={() => handleClick(language.id)}
+							active={active}
+						/>
 					))}
 				</ul>
 				<Card
