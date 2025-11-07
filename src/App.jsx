@@ -3,11 +3,10 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 
 function App() {
-	// console.log(languages);
 	return (
 		<>
 			<Header />
-			<Main />
+			<Main data={languages} />
 		</>
 	);
 }
